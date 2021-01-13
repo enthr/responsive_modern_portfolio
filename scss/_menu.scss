@@ -65,13 +65,13 @@
     &-nav {
         margin: 0;
         padding: 0;
-        background: darken($primary-color, 5);
+        background: darken($primary-color, 1);
         list-style: none;
-        transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, 100%, 0);
         @include easeOut();
 
         &.show {
-            //Slide in From Top
+            //Slide in From Bottom
             transform: translate3d(0, 0, 0);
         }
     }
@@ -79,18 +79,18 @@
     // Branding Side
     &-branding {
         background: $primary-color;
-        transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, -100%, 0);
         @include easeOut;
 
         &.show {
-            //Slide in From Bottom
+            //Slide in From Top
             transform: translate3d(0, 0, 0);
         }
 
         .portrait {
-            width: 250px;
-            height: 250px;
-            background: url('../img/portrait.jpg');
+            width: 200px;
+            height: 200px;
+            background: url('../img/portrait_small.png') no-repeat center;
             border-radius: 50%;
             border: solid 3px $secondary-color;
             
@@ -107,7 +107,7 @@
         }
 
         &.current > a {
-            color: $secondary-color;
+            color: lighten($primary-color, 10);
         }
     }
 
@@ -123,7 +123,7 @@
         @include easeOut;
 
         &:hover {
-            color: $secondary-color;
+            color: lighten($primary-color, 20);
         }
     }
 }
